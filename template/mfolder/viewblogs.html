@@ -1,0 +1,52 @@
+{% extends 'mfolder/base.html' %}
+{% block parentblock %}
+{% if msg %}
+<div class="alert alert-success alert-dismissible">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  <strong>{{msg}}</strong>
+</div>
+{% endif %}
+
+
+<br>
+<br>
+<br>
+<br>
+
+
+      <h2>MINDBLOGS HERE:</h2>
+
+    <p><b>Here are the blogs you are looking for:</b></p>
+{% if list1 %}
+
+<table class="table table-hover">
+ <tr>
+
+
+<th>bloger_about</th><th>bloger_pic</th><th>bloger_author</th>  <!-- <th>bloger_post</th><th>bloger_author</th><th>bloger_date</th><!-- /-->
+</tr>
+   {% for i in list1 %}
+
+   <tr>
+    <td>{{i.bloger_about}}</td>
+    <td><a href="/detailfile/{{i.bloger_about}}"><img src="{{i.bloger_pic.url}}" height="170" width="170" class="rounded-circle"></a></td>
+    <td>{{i.blogger_author}}</td>
+    {% ifequal request.user.username i.blogger_author %}
+    <td><a href="/dltblock/{{i.bloger_about}}"class="btn btn-danger" onclick="return confirm("Are you sure you want to delete?")">X</a></td>
+    {% endifequal %}
+
+      <!-- <td>{{i.bloger_post}}</td>
+    <td>{{i.blogger_author}}</td>
+    <td>{{i.blogger_date}}</td><!-- /-->
+  </tr>
+
+{%endfor%}
+</table>
+
+{%else%}
+
+<h2>no data</h2>
+
+{%endif%}
+
+{% endblock %}

@@ -1,0 +1,28 @@
+
+
+
+
+{% extends 'mfolder/base.html' %}
+{% block parentblock %}
+
+{% load crispy_forms_tags %}
+
+<br>
+<br>
+<br>
+<br>
+<center>
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSxQTumycyjIU5cw5eFxUnNHHB-H9fot-tMeD_-iPL7nhU8zoXE&usqp=CAU" height="500" width="400" class="rounded" >
+</center>
+  <br>
+  <br>
+
+<h2>login form</h2>
+<form method="post">
+{{form | crispy}}
+<input type="submit" value="login" />
+
+{% csrf_token %}
+</form>
+
+{% endblock %}

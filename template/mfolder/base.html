@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    </head>
+    <body>
+
+    <nav class="navbar navbar-expand-sm bg-danger text-white navbar-dark fixed-top">
+  <a class="navbar-brand ">MINDBLOGGER</a>
+  <ul class="navbar-nav">
+{% if request.user.is_authenticated is True %}
+    <li class="nav-item">
+      <a class="nav-link">welcome {{request.user}}</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/createblog">createblog</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/viewblogs">viewblogs</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/accounts/logout">logout</a>
+    </li>
+{% else %}
+    <li class="nav-item">
+      <a class="nav-link" href="/">welcome</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/accounts/login">login</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="/signup">signup</a>
+    </li>
+{% endif %}
+  </ul>
+</nav>
+
+<div class="container">
+{% block parentblock %}
+
+{% endblock %}
+
+  </body>
+</html>

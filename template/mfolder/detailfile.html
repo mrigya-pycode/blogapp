@@ -1,0 +1,27 @@
+
+
+
+
+{% extends 'mfolder/base.html' %}
+{% block parentblock %}
+<h3>the detailing of the product</h3>
+
+{% if list4 %}
+<br>
+<<br>
+<br>
+<br>
+<center>
+   <h1>{{list4.bloger_about}}</h1>
+   <img src="{{list4.bloger_pic.url}}" height="400" width="400" class="rounded">
+   <br>
+   <h2>DISCRIPTION :  {{list4.bloger_post}}</h2>
+   <br>
+   <br>
+   <h3>BY          :  {{list4.blogger_author}}</h3>
+   <h3>DATE        :  {{list4.blogger_date}}</h3>
+
+</center>
+{% endif %}
+
+{% endblock %}

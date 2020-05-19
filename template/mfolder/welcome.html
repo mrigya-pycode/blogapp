@@ -1,0 +1,97 @@
+{% extends 'mfolder/base.html' %}
+
+
+   {% block parentblock %}
+
+<br>
+<br>
+<br>
+<br>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title></title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+
+
+/* Create two columns/boxes that floats next to each other */
+
+
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+article {
+  float: left;
+  padding: 20px;
+  width: 70%;
+  background-color: powderblue;
+  height: 350px; /* only for demonstration, should be removed */
+}
+
+/* Clear floats after the columns */
+section:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the footer */
+
+
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+@media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
+}
+</style>
+</head>
+<body>
+<img src=https://scatter.co.in/wp-content/uploads/2018/01/shutterstock_720876373.jpg>
+<h2><center><h1 style="color:red;">WELCOME TO THE MINDBLOGGERS FOLKS</h1></center></h2>
+
+<section>
+  <article>
+    <center>
+    <h2>What is blogging?</h2>
+    <p>A blog (shortening of “weblog”) is an online journal or informational website
+      displaying information in the reverse chronological order, with the latest posts
+       appearing first. It is a platform where a writer or even a group of writers
+       share their views on an individual subject.</p>
+
+    <h2>Who is blogger?</h2>
+    <p>In recent times, bloggers have become famous for various reasons. An alternative
+      career or job to many, more people are choosing to join the ranks. So who are
+      bloggers? These are individuals who love sharing parts of their lives with you.
+       They post various topics from arts, home designs, carpentry, and finance
+       articles. Bloggers are mobile and don’t need to be in one place. They live
+        on the internet!</p>
+
+    </center>
+  </article>
+</section>
+
+
+
+</body>
+</html>
+
+
+
+  {% endblock %}

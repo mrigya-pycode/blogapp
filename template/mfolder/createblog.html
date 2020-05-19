@@ -1,0 +1,32 @@
+{% extends 'mfolder/base.html' %}
+{% block parentblock %}
+
+{% load crispy_forms_tags %}
+<div class="container text-center">
+  <br>
+  <br>
+  <br>
+  <br>
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ3bSPmrtSoeo1m44q-0ADABgLJZi8DUJl96dlOISwd1mE4iVmS&usqp=CAU" height='300' width='300'>
+
+   <h2><b> to update new blogs:</b><h2>
+{% if msg %}
+<div class="alert alert-success alert-dismissible">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+
+  <strong>{{msg}}</strong>
+</div>
+{% endif %}
+
+<div class="row justify-content-center">
+  <div class="col-lg-6">
+     <form method="POST" enctype="multipart/form-data" >
+      {{list2 | crispy}}
+      {% csrf_token %}
+      <input type="submit" value="save" class="btn btn-danger"/>
+    </form>
+  </div>
+</div>
+
+    </div>
+{% endblock %}
